@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DARK SYNTAX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #050505; color: white; overflow: hidden; font-family: 'Inter', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-glow:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .animated-gradient {
+            background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #0ea5e9, #2563eb);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .blob {
+            position: absolute;
+            width: 600px; height: 600px;
+            background: rgba(37, 99, 235, 0.12);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="blob top-[-150px] left-[-150px] animate-pulse"></div>
+    <div class="blob bottom-[-150px] right-[-150px] animate-pulse" style="animation-delay: 3s;"></div>
+
+    <div class="max-w-md w-full px-6 animate__animated animate__zoomIn">
+        <div class="glass p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+            
+            <div class="text-center mb-10">
+                <div class="flex justify-center items-center gap-3 mb-4">
+                    <img src="Logo.jpeg" alt="Logo" class="h-10 w-auto rounded border border-white/10">
+                    <h1 class="text-xl font-black italic tracking-tighter">
+                        DARK <span class="text-blue-500">SYNTAX</span>
+                    </h1>
+                </div>
+                <h2 class="text-gray-400 text-xs uppercase tracking-widest font-bold">Secure Access Portal</h2>
+            </div>
+
+            <form action="#" class="space-y-6">
+                <div>
+                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1">Identity Key</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">
+                            <i class="fas fa-terminal text-xs"></i>
+                        </span>
+                        <input type="text" placeholder="Username / ID" 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-600 transition-all input-glow">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1">Access Phrase</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">
+                            <i class="fas fa-key text-xs"></i>
+                        </span>
+                        <input type="password" placeholder="••••••••" 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-600 transition-all input-glow">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-[10px] font-bold text-gray-500 uppercase tracking-wider">
+                    <label class="flex items-center gap-2 cursor-pointer hover:text-white transition">
+                        <input type="checkbox" class="rounded bg-white/5 border-white/10 text-blue-600 focus:ring-0 w-3 h-3"> Persistent
+                    </label>
+                    <a href="#" class="hover:text-blue-400 transition">Reset Key?</a>
+                </div>
+
+                <button type="submit" 
+                    class="w-full animated-gradient py-4 rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-blue-600/30 hover:brightness-110 active:scale-[0.98] transition-all">
+                    Initialize Session
+                </button>
+            </form>
+
+            <div class="mt-8 text-center border-t border-white/10 pt-6">
+                <p class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">
+                    Unauthorized? 
+                    <a href="#" class="text-blue-400 hover:underline">Request Entry</a>
+                </p>
+                <a href="Home.html" class="inline-block mt-6 text-gray-600 text-[10px] font-black uppercase hover:text-white transition group">
+                   <i class="fas fa-chevron-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Return to Terminal
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
